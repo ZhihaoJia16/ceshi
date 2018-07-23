@@ -46,27 +46,28 @@ print(factory2)
 
 '''
 class Employee:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    id=1000
+    def __init__(self,id,name,salary):
+        self.id=id
+        self.name=name
+        self.salary=salary
+        
+    def __add__(self,other):
+        return self.salary+other
+    
+    def idNum(self,name,salary):
+        id+=1
+        print(id)
+        
+    @property
+    def salary(self):
+        return self.salary
+    @salary.setter
+    def salary(self,salNum):
+        if not isinstance(salNum,int):
+            raise ValueError('salary must be an integer!')
+        if salNum<1000 or salNum>50000:
+            raise ValueError('salary must be between 1000-50000!')
+        self.salary=salNum
 
 '''
