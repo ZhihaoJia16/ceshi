@@ -71,3 +71,53 @@ class Employee:
         self.salary=salNum
 
 '''
+
+
+--------------------------------
+
+    
+廖雪峰的python教程 - 使用@property - 廖雪峰的官方网站-----介绍@property逻辑较好
+'''
+#S3_1_1 简述多进程
+#多进程：模仿一边唱歌，一边跳舞。
+'''
+from time import sleep
+def sing():
+    for i in range(10):
+        print('唱歌')
+        dance()
+        sleep(1)
+def dance():
+    print('跳舞')
+sing()
+'''
+#主进程只有一个，子进程可以有多个
+#multiprocessing
+
+'''
+from multiprocessing import Process
+def run(name):
+    print("子进程"+name+"正在进行")
+if __name__=="__main__": #对于多进程，在windows的python3中必须有此行。
+    print('父进程启动')
+    p=Process(target=run,args=('test',),name="pro1")
+    #target表示调用对象，args表示调用对象的位置参数元祖
+    #（注意：元组中只有一个元素时结尾要加,）
+    print('子进程将进行')
+    p.start()
+    print(p.name)  #p.pid
+    p.join()
+    print('子进程结束')
+''' 
+    
+#S3_1_2 进程类 
+
+'''
+多进程
+Process(target,name,args)
+参数说明
+-target表示调用对象，即子进程要执行的任务
+-args表示调用对象的位置参数元祖，args=(1,)
+-name为子进程的名称
+
+'''
